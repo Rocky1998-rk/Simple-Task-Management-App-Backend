@@ -9,7 +9,13 @@ dotenv.config({ quiet: true });
 const PORT = process.env.PORT || 3000;
 connectDB();
 const app = express();
-app.use(cors());
+app.use(cors({
+     origin:["https://simple-task-management-app-gamma.vercel.app"],
+     credentials:true,
+     methods:["GET","POST","PUT","PATCH","DELETE"],
+     exposedHeaders:["Authorization"],
+     
+}));
 app.use(express.json());
 
 // ================= Routes ==============
