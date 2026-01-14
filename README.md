@@ -29,34 +29,4 @@ It provides APIs for user authentication and task management.
 
 ## 📂 Project Structure
 
-Simple-Task-Management-App
-│
-├── client/                     # Frontend (React App)
-│
-├── server/                     # Backend (Node + Express)
-│   │
-│   ├── config/
-│   │   └── db.js                # MongoDB connection
-│   │
-│   ├── controllers/
-│   │   ├── authController.js    # Signup & Login logic
-│   │   └── taskController.js    # Task CRUD operations
-│   │
-│   ├── middlewares/
-│   │   └── authMiddleware.js    # JWT authentication middleware
-│   │
-│   ├── models/
-│   │   ├── User.js              # User schema
-│   │   └── Task.js              # Task schema
-│   │
-│   ├── routes/
-│   │   ├── authRoutes.js        # Authentication routes
-│   │   └── taskRoutes.js        # Task routes
-│   │
-│   ├── .env                     # Environment variables
-│   ├── .gitignore
-│   ├── package.json
-│   ├── package-lock.json
-│   └── server.js                # Main backend entry file
-│
-└── README.md
+<img width="1920" height="1200" alt="Screenshot 2026-01-14 170839" src="https://github.com/user-attachments/assets/a3bf7a7d-da88-4195-98a5-6fbb244d3fd4" />
