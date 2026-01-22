@@ -5,10 +5,14 @@ import connectDB from "./config/db.js";
 import taskRoutes from "./routes/taskRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 
+
 dotenv.config({ quiet: true });
-const PORT = process.env.PORT || 3000;
-connectDB();
 const app = express();
+const PORT = process.env.PORT || 3000;
+app.use(express.json());
+connectDB();
+
+
 app.use(cors({
      origin:["https://simple-task-management-app-gamma.vercel.app"],
      credentials:true,
@@ -16,8 +20,6 @@ app.use(cors({
      exposedHeaders:["Authorization"],
      
 }));
-app.options("*", cors());
-app.use(express.json());
 
 // ================= Routes ==============
 app.use("/api/auth", authRoutes);
