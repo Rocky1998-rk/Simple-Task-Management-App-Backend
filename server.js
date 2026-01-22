@@ -16,6 +16,7 @@ app.use(cors({
      exposedHeaders:["Authorization"],
      
 }));
+app.options("*", cors());
 app.use(express.json());
 
 // ================= Routes ==============
