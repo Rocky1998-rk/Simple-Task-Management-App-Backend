@@ -10,8 +10,6 @@ dotenv.config({ quiet: true });
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
-connectDB();
-
 
 app.use(cors({
      origin:["https://simple-task-management-app-gamma.vercel.app"],
@@ -26,8 +24,18 @@ app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const startServer = async () => {
+  try {
+    await connectDB();
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Server startup failed:", error.message);
+    process.exit(1);
+  }
+};
+
+startServer();
 
 export default app;
